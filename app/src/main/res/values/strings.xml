@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">OnVacation</string>
     <string name="action_settings">Settings</string>
+    <string name="vacationStartNameBtn">Начало отпуска</string>
+    <string name="vacationEndNameBtn">Конец отпуска</string>
+    <string name="vacationSelectHeaderMain">выбор дат отпуска</string>
 </resources>
