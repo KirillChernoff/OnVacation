@@ -25,16 +25,20 @@
         android:textAlignment="center"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/startDateBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:text="Начало отпуска"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/endDateBtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:text="Конец отпуска"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>
 
