@@ -1,5 +1,6 @@
 package com.onvacation;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import java.util.Calendar;
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
     static DateModel dateModel;
+
+    private OnCompleteListener mListener;
 
     public DateModel getDate(){
         if (dateModel != null)
@@ -38,5 +41,20 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     @Override
     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
         dateModel = new DateModel(dayOfMonth, monthOfYear + 1, year);
+        this.mListener.onComplete(dateModel);
+    }
+
+    public void onAttach(Activity activity){
+        super.onAttach(activity);
+        try {
+            this.mListener = (OnCompleteListener)activity;
+
+        }catch (final ClassCastException e){
+            throw new ClassCastException(activity.toString() + " must implement OnCompleteListener");
+        }
+    }
+
+    public static interface OnCompleteListener {
+        public abstract void onComplete(DateModel date);
     }
 }

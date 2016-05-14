@@ -20,7 +20,7 @@ import com.onvacation.models.DateModel;
 
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DatePickerFragment.OnCompleteListener {
 
     private DateModel startDate;
 
@@ -66,8 +66,10 @@ public class MainActivity extends AppCompatActivity {
     public void showDatePickerDialog(View view) {
         DatePickerFragment fragment = new DatePickerFragment();
         fragment.show(getSupportFragmentManager(), "datePicker");
+    }
 
-        startDate = fragment.getDate();
-
+    @Override
+    public void onComplete(DateModel date) {
+        startDate = date;
     }
 }
