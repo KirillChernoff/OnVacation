@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.onvacation.models.DateModel;
@@ -71,5 +72,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerFragmen
     @Override
     public void onComplete(DateModel date) {
         startDate = date;
+        EditText mEditText = (EditText)findViewById(R.id.startDateEdit);
+        mEditText.setText(startDate.toString());
     }
 }
