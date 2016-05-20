@@ -18,15 +18,14 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
     static DateModel dateModel;
 
-    private OnCompleteListener mListener;
+    public IOnCompleteListener mListener;
 
-    public DateModel getDate(){
-        if (dateModel != null)
-            return dateModel;
-        return null;
+    public DatePickerFragment(){
     }
 
-    public DatePickerFragment(){}
+    public DatePickerFragment(IOnCompleteListener onCompleteListener) {
+        this.mListener = onCompleteListener;
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
@@ -44,17 +43,13 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         this.mListener.onComplete(dateModel);
     }
 
-    public void onAttach(Activity activity){
-        super.onAttach(activity);
-        try {
-            this.mListener = (OnCompleteListener)activity;
-
-        }catch (final ClassCastException e){
-            throw new ClassCastException(activity.toString() + " must implement OnCompleteListener");
-        }
-    }
-
-    public static interface OnCompleteListener {
-        public abstract void onComplete(DateModel date);
-    }
+//    public void onAttach(Activity activity){
+//        super.onAttach(activity);
+//        try {
+////            this.mListener = (OnCompleteListener)activity;
+//
+//        }catch (final ClassCastException e){
+//            throw new ClassCastException(activity.toString() + " must implement OnCompleteListener");
+//        }
+//    }
 }

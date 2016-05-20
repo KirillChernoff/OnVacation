@@ -21,9 +21,13 @@ import com.onvacation.models.DateModel;
 
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity implements DatePickerFragment.OnCompleteListener {
+public class MainActivity extends AppCompatActivity {
 
     private DateModel startDate;
+    private DateModel endDate;
+
+    private DatePickerFragment startPicker;
+    private DatePickerFragment endPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,24 @@ public class MainActivity extends AppCompatActivity implements DatePickerFragmen
 //                        .setAction("Action", null).show();
 //            }
 //        });
+
+        startPicker = new DatePickerFragment(new IOnCompleteListener() {
+            @Override
+            public void onComplete(DateModel date) {
+                startDate = date;
+                EditText mEditText = (EditText)findViewById(R.id.startDateEdit);
+                mEditText.setText(startDate.toString());
+            }
+        });
+
+        endPicker = new DatePickerFragment(new IOnCompleteListener() {
+            @Override
+            public void onComplete(DateModel date) {
+                endDate = date;
+                EditText mEditText = (EditText)findViewById(R.id.endDateEdit);
+                mEditText.setText(endDate.toString());
+            }
+        });
     }
 
     @Override
@@ -64,15 +86,15 @@ public class MainActivity extends AppCompatActivity implements DatePickerFragmen
         return super.onOptionsItemSelected(item);
     }
 
-    public void showDatePickerDialog(View view) {
-        DatePickerFragment fragment = new DatePickerFragment();
-        fragment.show(getSupportFragmentManager(), "datePicker");
+    public void showStartDateDialog(View view) {
+        startPicker.show(getSupportFragmentManager(), "startPicker");
     }
 
-    @Override
-    public void onComplete(DateModel date) {
-        startDate = date;
-        EditText mEditText = (EditText)findViewById(R.id.startDateEdit);
-        mEditText.setText(startDate.toString());
+    public void showEndDateDialog(View view) {
+        endPicker.show(getSupportFragmentManager(), "endPicker");
+    }
+
+    public void calculateVariants(View view) {
+
     }
 }

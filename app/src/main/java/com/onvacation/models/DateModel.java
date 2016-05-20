@@ -29,7 +29,21 @@ public class DateModel {
 
     @Override
     public String toString(){
-        return _dayOfMonth+"."+_month+"."+_year;
+        String d;
+        String m;
+
+        if (_dayOfMonth < 10)
+            d = "0"+_dayOfMonth;
+        else
+            d = String.valueOf(_dayOfMonth);
+
+        if (_month < 10)
+            m = "0"+_month;
+        else
+            m = String.valueOf(_month);
+
+
+        return String.format("%1s.%2s.%3s", d, m, _year);
     }
 
 }

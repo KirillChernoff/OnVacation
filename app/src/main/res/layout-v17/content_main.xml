@@ -30,7 +30,8 @@
         android:text="@string/vacationStartNameBtn"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:onClick="showDatePickerDialog"/>
+        android:onClick="showStartDateDialog"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/endDateEdit"
@@ -38,7 +39,18 @@
         android:layout_height="50dp"
         android:text="@string/vacationEndNameBtn"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:onClick="showEndDateDialog"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#CDDC39"
+        android:text="предложить даты"
+        android:onClick="calculateVariants"/>
 
 </LinearLayout>
 
