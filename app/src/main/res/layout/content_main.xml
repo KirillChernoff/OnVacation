@@ -31,7 +31,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:onClick="showStartDateDialog"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:inputType="none"
+        android:focusable="false"
+        android:cursorVisible="false"/>
 
     <EditText
         android:id="@+id/endDateEdit"
@@ -41,7 +44,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:onClick="showEndDateDialog"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:inputType="none"
+        android:focusable="false"
+        android:cursorVisible="false"/>
 
     <Button
         android:layout_width="match_parent"

@@ -42,14 +42,4 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         dateModel = new DateModel(dayOfMonth, monthOfYear + 1, year);
         this.mListener.onComplete(dateModel);
     }
-
-//    public void onAttach(Activity activity){
-//        super.onAttach(activity);
-//        try {
-////            this.mListener = (OnCompleteListener)activity;
-//
-//        }catch (final ClassCastException e){
-//            throw new ClassCastException(activity.toString() + " must implement OnCompleteListener");
-//        }
-//    }
 }
