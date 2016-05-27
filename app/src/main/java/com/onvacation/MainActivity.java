@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.onvacation.models.CalcDatesLogic;
 import com.onvacation.models.DateModel;
 
 import java.util.Calendar;
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculateVariants(View view) {
-
+        CalcDatesLogic calc = new CalcDatesLogic(startDate, endDate);
+        calc.CalculateMethod();
     }
 }

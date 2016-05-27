@@ -3,6 +3,7 @@ package com.onvacation.models;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Dictionary;
 import java.util.GregorianCalendar;
 
 /**
@@ -20,9 +21,28 @@ public class CalcDatesLogic {
     }
 
     public void CalculateMethod(){
-        GregorianCalendar stDate = new GregorianCalendar(_startVacDate.getYear(), _startVacDate.getMonth(), _startVacDate.getDay());
+        GregorianCalendar stDate = new GregorianCalendar(_startVacDate.getYear(), _startVacDate.getMonth()-1, _startVacDate.getDay());
+        GregorianCalendar endDate = new GregorianCalendar(_endVacDate.getYear(), _endVacDate.getMonth()-1, _endVacDate.getDay());
 
-        int start_day_of_week = stDate.get(Calendar.DAY_OF_WEEK);
+        int stDayOfWeek = stDate.get(Calendar.DAY_OF_WEEK);
+
+        if (stDayOfWeek == 4){
+
+        }
+        if (stDayOfWeek < 4){
+
+        }
+        if (stDayOfWeek > 4){
+
+
+        }
+
+//        String start_day_of_week = String.format("%1$tA", stDate);
+//        String end_day_of_week = String.format("%1$tA", endDate);
+
+
+
+
 
     }
 
